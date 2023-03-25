@@ -1,0 +1,125 @@
+#include<stdio.h>
+
+
+#include<string.h>
+#include<assert.h>
+////size_t=unsinged int
+//int my_strlen(const char* str)
+//{
+//    assert(str != NULL);
+//    int count = 0;
+//    while (*str != '\0')
+//    {
+//        count++;
+//        str++;
+//    }
+//    return count;
+//}
+//
+//
+//int main()
+//{
+//   /* int len = my_strlen("abcdef");
+//    printf("%d", len);*/
+//    if (strlen("abc") - strlen("abcdef") > 0)
+//    {
+//        printf("hehe\n");
+//    }
+//    else
+//    {
+//        printf("haha\n");
+//    }
+//}
+//
+//
+//
+//char* my_strcpy(char* dest, char* src)
+//{
+//	assert(dest != NULL);
+//	assert(src != NULL);
+//	while (*src != '\0')
+//	{
+//		*dest = *src;
+//		dest++;
+//		src++;
+//	}
+//	*dest = *src;
+//	//while(*dest++=*src++)
+//	//{
+//	//	;
+//	//}
+//}
+//
+//
+////strcpy拷贝的原字符串必须包含\0,否则可能导致向后越界访问,不能得到所想要的拷贝的字符串
+//int main()
+//{
+//	char arr1[] = "abcdef";
+//	char arr2[] = "bit";
+//	my_strcpy(arr1, arr2);
+//	printf("%s\n", arr1);
+//	return 0;
+//}
+//
+//
+//
+//
+//
+//char* my_strcat(char* dest, char* src)
+//{
+//	assert(dest != NULL);
+//	assert(src != NULL);
+//	char* ret = dest;
+//	//找到dest中的\0
+//	while (*dest != '\0')
+//	{
+//		dest++;
+//	}
+//	//追加src
+//	while (*dest++ = *src++)
+//	{
+//		;
+//	}
+//	return ret;
+// }
+//
+//int main()
+//{
+//	char arr1[30] = "hello";
+//	char arr2[] = "world";
+//	my_strcat(arr1, arr2);
+//	printf("%s\n", arr1);
+//	return 0;
+//}
+//
+// 
+//
+//
+//
+//int my_strcmp(const char* str1, const char* str2)
+//{
+//	assert(str1 && str2);
+//	//比较
+//	while (*str1 == *str2)
+//	{
+//		if (*str1 == '\0')
+//		{
+//			return 0;//相等
+//		}
+//		str1++;
+//		str2++;
+//	}
+//	if (*str1 > *str2)
+//		return 1;//大于
+//	else if(*str1 < *str2)
+//		return -1;//小于
+//}
+//
+//int main()
+//{
+//	char* p1 = "abcdef";
+//	char* p2 = "abwer";
+//	int ret=my_strcmp(p1, p2);
+//	printf("ret=%d\n", ret);
+//	return 0;
+//}
