@@ -1,0 +1,80 @@
+//枚举类型
+//enum Sex
+//{
+//	//枚举的可能取值-常量
+//MALE=2,
+//FEMALE,
+//SECRET=8
+//};
+//
+//enum Color
+//{
+//	RED,//0
+//	YELLOW,//1
+//	BLUE//2
+//};
+//
+//int main()
+//{
+//	enum Sex s = MALE;
+//	enum Color c = RED;
+//	printf("%d %d %d\n", RED, YELLOW, BLUE);
+//	printf("%d %d %d\n", MALE, FEMALE, SECRET);
+//	return 0;
+//}
+
+
+
+
+//联合=联合体-共用体
+//union Un
+//{
+//	char c;
+//	int i;
+//};
+//
+//int main()
+//{
+//	union Un u;
+//	printf("%d\n", sizeof(u));
+//	printf("%p\n", &u);
+//	printf("%p\n", &(u.c));
+//	printf("%p\n", &(u.i));//共用同一块内存空间
+//	return 0;
+//}
+
+
+
+
+
+//int check_sys()
+//{
+//	int a = 1;
+//	return *(char*)&a;
+//}
+//
+//int check_sys()
+//{
+//	union Un
+//	{
+//		char c;
+//		int i;
+//	}u;
+//	u.i = 1;
+//	return u.c;
+//}
+//
+//int main()
+//{
+//	int a = 0;
+//	int ret = check_sys();
+//	if (ret == 1)
+//	{
+//		printf("小端");
+//	}
+//	else
+//	{
+//		printf("大端");
+//	}
+//	return 0;
+//}
