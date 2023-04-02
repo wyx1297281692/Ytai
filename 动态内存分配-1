@@ -1,0 +1,130 @@
+#include<stdio.h>
+
+
+//struct S
+//{
+//	char name[20];
+//	int age;
+//};
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%s", &n);
+//	struct S arr[n];
+//}
+
+
+#include<stdlib.h>
+#include<string.h>
+#include<errno.h>
+//int main()
+//{
+//	//向内存申请十个整形的空间
+//	//int* p = (int*)malloc(10 * sizeof(int));
+//	int* p = (int*)malloc(40);
+//	if(p == NULL)
+//	{
+//		//打印错误原因的一个方式
+//		printf("%s\n", strerror(errno));
+//	}
+//	else
+//	{
+//		//正常使用
+//		int i = 0;
+//		for (i = 0; i < 10; i++)
+//		{
+//			*(p + i) = i;
+//		}
+//		for (i = 0; i < 10; i++)
+//		{
+//			printf("%d ", *(p + i));
+//		}
+//	}
+//	//当动态申请的空间不再使用的时候
+//	//就应该还给操作系统
+//	free(p);
+//	p = NULL;
+//	return 0;
+//}
+
+
+
+
+
+//int main()
+//{
+//	int* p = (int*)calloc(10, sizeof(int));
+//	if (p == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//	}
+//	else
+//	{
+//		        int i = 0;
+//				for (i = 0; i < 10; i++)
+//				{
+//					printf("%d ", *(p + i));
+//				}
+//	}
+//	free(p);
+//	p = NULL;
+//	return 0;
+//}
+
+
+
+
+//realloc--调整动态开辟内存空间的大小
+
+//int main()
+//{
+//	int* p = (int*)malloc(20);
+//	if (p == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//	}
+//	else
+//	{
+//		int i = 0;
+//		for (i = 0; i < 5; i++)
+//		{
+//			*(p + i) = i;
+//		}
+//	}
+//	// p = realloc(p, 40);
+//	//如果p指向的空间之后有足够的空间可以追加,则直接追加,返回p2
+//	//如果p指向的空间之后没有足够的空间可以追加,则realloc会重新开辟一个新的内存空间,把原来的内存拷贝过去,释放旧的内存空间,返回新开辟的内存空间的地址
+//	//得用一个新的变量来接受realloc的返回值
+//	int* p2 = realloc(p, 40);
+//	if (p2 != NULL)//后面的空间足够追加
+//	{
+//		p = p2;
+//	}
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *(p2 + i));
+//	}
+//	//释放内存
+//	free(p);
+//	return 0;
+//}
+
+
+
+//注意错误
+// 
+//int main()
+//{
+//	int* p = (int*)malloc(40);
+//	//万一malloc开辟失败,p被赋值为NULL
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		*(p + i) = i;
+//	}
+//	free(p);
+//	p = NULL;
+//	return 0;
+//}
