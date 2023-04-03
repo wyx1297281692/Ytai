@@ -128,3 +128,67 @@
 //	p = NULL;
 //	return 0;
 //}
+
+
+
+// void GetMemory(char* p)
+//{
+//	p = (char*)malloc(40);
+//}
+//
+//void  Test(void)
+//{
+//	char* str = NULL;
+//	GetMemory(str);
+//	strcpy(str, "hello world");//运行内存,程序会出现崩毁
+	///*程序存在内存崩溃的问题
+	//str以值传的形式给p
+	//p是GetMemory函数的形参,只能函数内部有效,等Getmemory函数返回之后,动态开辟的内存尚未释放,并且无法找到,所以会造成内存泄漏*/
+//	printf(str);
+//}
+//
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+
+
+
+
+
+//int Test(char*str)
+//{
+//	str = (char*)malloc(40);
+//	return str;
+//}
+//
+//int main()
+//{
+//	int* p = Test();
+//	return 0;
+//}
+
+
+
+
+//void GetMemory(char**p,int num)
+//{
+//	*p = (char*)malloc(num);
+//}
+//
+//void  Test(void)
+//{
+//	char* str = NULL;
+//	GetMemory(&str,100);
+//	strcpy(str, "hello world");
+//	printf("%s\n",str);//忘记释放动态开辟的内存,导致内存泄漏
+//	free(str);
+//	str = NULL;
+//}
+//
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
