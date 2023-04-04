@@ -1,0 +1,99 @@
+//柔性数组
+//内存连续,有利于访问速度
+//struct S
+//{
+//	int n;
+//  //柔性数组成员前面必须有一个其他成员
+//	int arr[0];//未知大小--数组的大小可以调整
+//};
+//
+//
+//int main()
+//{
+//	//struct S s;
+//	//printf("%d\n", sizeof(s));//4
+//	struct S* ps = (struct S*)malloc(sizeof(struct S) + 5 * sizeof(int));
+//	ps->n = 100;
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		ps->arr[i] = i;
+//	}
+//	struct S* ptr = realloc(ps, 44);
+//	if (ptr != NULL)
+//	{
+//		ps = ptr;
+//	}
+//	for (i = 5; i < 10; i++)
+//	{
+//		ps->arr[i] = i;
+//	}
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", ps->arr[i]);
+//	}
+//	free(ps);
+//	ps = NULL;
+//	return 0;
+//}
+
+
+
+
+//此调整方式内存没有连续
+//struct S
+//
+//{
+//	int n;
+//	int* arr;
+//};
+//
+//int main()
+//{
+//	struct S* ps = (struct S*)malloc(sizeof(struct S));
+//	ps->arr = malloc(5 * sizeof(int));
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		ps->arr[i] = i;
+//	}
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("%d ", ps->arr[i]);
+//	}
+//	//调整大小
+//	int* ptr = realloc(ps->arr, 40);
+//	if (ptr != NULL)
+//	{
+//		ps->arr = ptr;//*
+//	}
+//	for (i = 5; i < 10; i++)
+//	{
+//		ps->arr[i] = i;
+//	}
+//	for (i = 5; i < 10; i++)
+//	{
+//		printf("%d ", ps->arr[i]);
+//	}
+//	free(ps->arr);
+//	ps->arr = NULL;
+//	free(ps);
+//	ps = NULL;
+//	return 0;
+//}
+
+
+
+
+//struct S
+//{
+//	char a;
+//	int arr[];
+//};
+//
+//int main()
+//{
+//	struct S s;
+//	printf("%d\n", sizeof(struct S));//结构大小不包含柔性数组的内存
+//	return 0;
+//}
