@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+
+#include<stdlib.h>
+//int main()
+//{
+//	//表示上一级路径
+//	//fopen("../test.txt","r");
+//	FILE* pf=fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		printf("%d\n", strerror(errno));
+//	}
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	FILE* pfWrite = fopen("test.txt", "w");
+//	if (pfWrite == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	//写文件
+//	fputc('b', pfWrite);
+//	fputc('i', pfWrite);
+//	fputc('t', pfWrite);
+//	
+//	//关闭文件
+//	fclose(pfWrite);
+//	pfWrite = NULL;
+//	return 0;
+//}
