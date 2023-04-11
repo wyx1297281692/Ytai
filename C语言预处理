@@ -32,3 +32,68 @@
 //	pf = NULL;
 //	return 0;
 //}
+
+
+
+//#define MAX 100;
+//int main()
+//{
+//	int a = MAX;
+//	printf("%d\n",a);//MAX被替换成 100; 
+//
+//	return 0;
+//}
+
+
+
+
+//#define SQUARE(x) x*x
+//#define DOUBLE(x) x+x
+//int main()
+//{
+//	int ret = SQUARE(5);//5*5
+//	int num = SQUARE(5 + 1);//5+1*5+1=11   完整的进行替换x,而不是计算后传参
+//	int a = 5;
+//	int n = 10 * DOUBLE(a);// 10*5+5=55  
+//	printf("%d\n", ret);
+//	printf("%d\n", num);
+//	return 0;
+//}
+
+
+
+
+//#define PRINT(X) printf("the vaule of "#X" is %d\n",X)
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	PRINT(a);
+//	PRINT(b);
+//	return 0;
+//}
+
+
+
+//#define CAT(X,Y) X##Y //## 把位于它两边的符号连在一起
+//int main()
+//{
+//	int Class2001 = 2020;
+//	printf("%d\n", CAT(Class, 2001));
+//	return 0;
+//}
+
+
+
+
+//#define MAX(X,Y)   ((X)>(Y)?(X):(Y))
+//int main()
+//{
+//	int a = 10;
+//	int b = 11;
+//	int max = MAX(a++, b++);
+//	printf("%d\n", max);
+//	printf("%d\n", a);
+//	printf("%d\n", b);
+//	return 0;
+//}
