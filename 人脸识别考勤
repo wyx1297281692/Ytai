@@ -1,0 +1,59 @@
+#include <iostream>
+#include "opencv2/opencv.hpp"
+#include "face.h"
+
+using namespace std;
+using namespace cv;
+using namespace aip;
+
+int main()
+{
+    VideoCapture cap(0); //open the default camera
+    if(!cap.isOpened())  // check if we succeeded
+     {
+       cout << "camera open failed\n";
+       return -1;
+     }
+    cout << "camera open successed\n";
+    Mat frame;
+    Mat img;
+    
+    CascadeClassifier classifier("/usr/share/opencv/haarcascades/haarcascade_frontalface_alt2.xml");
+   
+    vector<Rect> allface;
+    Mat faceimg;
+    vector<uchar> jpgimg;
+   
+    // 设置APPID/AK/SK
+    std::string app_id = "85326179";
+    std::string api_key = "IpcdfazCJ2xBZ5sxcfiOfvHM";
+    std::string secret_key = "TRz4wgcvwkt9xnrfqGJwtt6Pe6W26yHq";
+
+    aip::Face client(app_id, api_key, secret_key);
+
+    std::string base54imag;
+    Json::Value result;
+
+    for(;;)
+    {
+      cap >> frame;// get a new frame from camera
+      cvtColor(frame,img,CV_BGR2GRAY);//change color
+      classifier.detectMultiScale(img,allface);//get a list of matrices from the image
+      if(allface.size())
+      {
+         rectangle(img,allface[0],Scalar(255,255,0));//draw a rectangular box over the image
+         faceimg=img(allface[0]);//Save face data
+         imencode(".jpg",faceimg,jpgimg);//change the format of imag
+         base54imag=base64_encode((char*)jpgimg.data(),jpgimg.size());
+         result=client.search(base54imag, "BASE64","Seule_face", aip::null);//调用人脸搜索
+         cout << result <<endl;
+      }
+      else
+      {
+         cout << "NO face!\n";
+      }
+      imshow("seule", img);
+      waitKey(40);
+    }
+    return 0;
+}
