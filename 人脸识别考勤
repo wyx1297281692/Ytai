@@ -33,6 +33,8 @@ int main()
 
     std::string base54imag;
     Json::Value result;
+    
+    time_t sec;
 
     for(;;)
     {
@@ -46,7 +48,18 @@ int main()
          imencode(".jpg",faceimg,jpgimg);//change the format of imag
          base54imag=base64_encode((char*)jpgimg.data(),jpgimg.size());
          result=client.search(base54imag, "BASE64","Seule_face", aip::null);//调用人脸搜索
-         cout << result <<endl;
+         if(!result["result"].isNull())
+           {
+             if(result["result"]["user_list"][0]["score"].asInt()>80)//提取人脸相似度
+              {
+                 cout << result["result"]["user_list"][0]["user_id"] <<endl;
+                 sec=time(NULL);
+                 cout << ctime(&sec) <<endl;//即时采集时间
+                 putText(img,result["result"]["user_list"][0]["user_id"].asString(),Point(0,50),FONT_HERSHEY_SIMPLEX,1,Scalar(255,255,0));//在图像上显示名字
+              }
+           }
+         
+         //cout << result <<endl;
       }
       else
       {
